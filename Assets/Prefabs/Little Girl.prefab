@@ -9,11 +9,12 @@ GameObject:
   m_Component:
   - 4: {fileID: 461656}
   - 212: {fileID: 21228206}
-  - 95: {fileID: 9553446}
   - 50: {fileID: 5021662}
-  - 114: {fileID: 11405092}
   - 61: {fileID: 6137150}
-  m_Layer: 0
+  - 95: {fileID: 9531556}
+  - 114: {fileID: 11485216}
+  - 114: {fileID: 11446148}
+  m_Layer: 8
   m_Name: Little Girl
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -28,7 +29,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 410554}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: CeilingCheck
   m_TagString: Untagged
   m_Icon: {fileID: -2065832391, guid: 0000000000000000d000000000000000, type: 0}
@@ -43,7 +44,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 474008}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: -2065832391, guid: 0000000000000000d000000000000000, type: 0}
@@ -69,8 +70,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 103728}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.2306232, y: 2.7209702, z: 0}
-  m_LocalScale: {x: 0.25496253, y: 0.25496218, z: 0.14392199}
+  m_LocalPosition: {x: -7.45, y: 3.36, z: 0}
+  m_LocalScale: {x: 0.20068406, y: 0.20068377, z: 0.11328271}
   m_Children:
   - {fileID: 474008}
   - {fileID: 410554}
@@ -96,7 +97,7 @@ Rigidbody2D:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 103728}
   m_UseAutoMass: 0
-  m_Mass: 0.016279075
+  m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 3
@@ -116,27 +117,27 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0.21080421, y: -0.0000009351135}
+  m_Offset: {x: 0.05411712, y: -0.33549407}
   serializedVersion: 2
-  m_Size: {x: 3.6962397, y: 8.14}
---- !u!95 &9553446
+  m_Size: {x: 4.1891365, y: 13.605743}
+--- !u!95 &9531556
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 103728}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 5fc43f0c4b413534ba12c51c0e5e5f6f, type: 2}
+  m_Controller: {fileID: 9100000, guid: ee72498fc10e7874cbfe13116a349934, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 1
+  m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &11405092
+--- !u!114 &11446148
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -149,15 +150,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_MaxSpeed: 10
   m_JumpForce: 400
-  m_CrouchSpeed: 0.36
-  m_AirControl: 0
-  m_WhatIsGround: {}
-  m_GroundCheck: {fileID: 0}
-  m_Grounded: 0
-  m_CeilingCheck: {fileID: 0}
-  m_Anim: {fileID: 0}
-  m_Rigidbody2D: {fileID: 0}
-  m_FacingRight: 1
+  m_AirControl: 1
+  m_WhatIsGround:
+    serializedVersion: 2
+    m_Bits: 0
+--- !u!114 &11485216
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 103728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3d7b34a3bb2d4e4b926e7e729d3d410, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &21228206
 SpriteRenderer:
   m_ObjectHideFlags: 1

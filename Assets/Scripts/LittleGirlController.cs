@@ -4,7 +4,8 @@ using System.Collections;
 public class LittleGirlController : MonoBehaviour {
 	// movement config
 	public float gravity = -15f;
-	public float runSpeed = 8f;
+	public float maxRunSpeed = 8f;
+	public float accelerate = 4f;
 	// public float groundDamping = 20f; // how fast do we change direction? higher means faster
 	// public float inAirDamping = 5f;
 	// public float jumpWaitTime = 2.0;
@@ -20,8 +21,8 @@ public class LittleGirlController : MonoBehaviour {
 	public Vector3 velocity;
 
 	// Animation States
-	private int walkState = Animator.StringToHash("Walking");
-	private int idleState = Animator.StringToHash("Standing");
+	/*private int walkState = Animator.StringToHash("Walking");
+	private int idleState = Animator.StringToHash("Standing");*/
 
 	private Prime31.CharacterController2D _controller;
 	private Animator _animator;
@@ -34,7 +35,7 @@ public class LittleGirlController : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
 		// grab our current velocity to use as a base for all calculations
 		var velocity = _controller.velocity;
 
@@ -46,41 +47,41 @@ public class LittleGirlController : MonoBehaviour {
 		//horizontal input
 		if (Input.GetKey (KeyCode.D)) {
 			normalizedHorizontalSpeed = 1;
-			velocity.x = normalizedHorizontalSpeed * runSpeed;
+			velocity.x = normalizedHorizontalSpeed * maxRunSpeed;
 			if (transform.localScale.x < 0f)
 				transform.localScale = new Vector3 (-transform.localScale.x, transform.localScale.y, transform.localScale.z);
 
 			if (_controller.isGrounded)
-				_animator.Play (walkState);
+				_animator.SetBool("IsWalking", true);
 		} else if( Input.GetKey( KeyCode.A ) )	{
 				normalizedHorizontalSpeed = -1;
-				velocity.x = normalizedHorizontalSpeed * runSpeed;
+				velocity.x = normalizedHorizontalSpeed * maxRunSpeed;
 				if( transform.localScale.x > 0f )
 					transform.localScale = new Vector3( -transform.localScale.x, transform.localScale.y, transform.localScale.z );
 
 				if(_controller.isGrounded)
-					_animator.Play(walkState);
+					_animator.SetBool("IsWalking", true);
 		} else {
 			normalizedHorizontalSpeed = 0;
 			velocity.x = normalizedHorizontalSpeed;
 
 			if( _controller.isGrounded )
-				_animator.Play(idleState);
+				_animator.SetBool("IsWalking", false);
 		}
 
 		if( Input.GetKeyDown( KeyCode.W ) )
 		{	
 			if (jumpCount < 2) {
-				velocity.y = Mathf.Sqrt (70f);
+				velocity.y = 20f;
 				jumpCount++;
-				_animator.Play (walkState);
+				_animator.SetBool("IsJumping", true);
 			}
 				
 			// _animator.Play( Animator.StringToHash( "Jump" ) );
 		}
 
 
-		velocity.y += gravity * Time.deltaTime;
+		velocity.y += gravity;
 
 		_controller.move (velocity * Time.deltaTime );
 

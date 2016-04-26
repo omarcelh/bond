@@ -106,7 +106,7 @@ public class CharacterController2D : MonoBehaviour
 	/// </summary>
 	/// <value>The slope limit.</value>
 	[Range( 0f, 90f )]
-	public float slopeLimit = 30f;
+	public float slopeLimit = 45f;
 
 	/// <summary>
 	/// the threshold in the change in vertical movement between frames that constitutes jumping
@@ -290,16 +290,7 @@ public class CharacterController2D : MonoBehaviour
 	}
 
 
-	/// <summary>
-	/// moves directly down until grounded
-	/// </summary>
-	public void warpToGrounded()
-	{
-		do
-		{
-			move( new Vector3( 0, -1f, 0 ) );
-		} while( !isGrounded );
-	}
+
 
 
 	/// <summary>
@@ -412,7 +403,8 @@ public class CharacterController2D : MonoBehaviour
 	bool handleHorizontalSlope( ref Vector3 deltaMovement, float angle )
 	{
 		// disregard 90 degree angles (walls)
-		if( Mathf.RoundToInt( angle ) == 90 )
+		Debug.Log(angle);
+		if( Mathf.RoundToInt( angle ) >= 80 )
 			return false;
 
 		// if we can walk on slopes and our angle is small enough we need to move up
@@ -540,7 +532,7 @@ public class CharacterController2D : MonoBehaviour
 		{
 			// bail out if we have no slope
 			var angle = Vector2.Angle( _raycastHit.normal, Vector2.up );
-			if( angle == 0 )
+			if( angle == 0)
 				return;
 
 			// we are moving down the slope if our normal and movement direction are in the same x direction
