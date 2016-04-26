@@ -159,7 +159,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 979773988}
   - 212: {fileID: 979773989}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bg4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -173,7 +173,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 979773987}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 23.95, y: -1.7, z: 100}
+  m_LocalPosition: {x: 23.95, y: -1.7, z: 15}
   m_LocalScale: {x: 1.164676, y: 1.164676, z: 1.164676}
   m_Children: []
   m_Father: {fileID: 709270155}
@@ -208,6 +208,92 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+--- !u!1 &1015072557
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1015072558}
+  - 20: {fileID: 1015072562}
+  - 124: {fileID: 1015072561}
+  - 92: {fileID: 1015072560}
+  - 81: {fileID: 1015072559}
+  m_Layer: 0
+  m_Name: Parallax Camera
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1015072558
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1015072557}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 10, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1897207413}
+  m_RootOrder: 0
+--- !u!81 &1015072559
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1015072557}
+  m_Enabled: 1
+--- !u!92 &1015072560
+Behaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1015072557}
+  m_Enabled: 1
+--- !u!124 &1015072561
+Behaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1015072557}
+  m_Enabled: 1
+--- !u!20 &1015072562
+Camera:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1015072557}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0.44852942, g: 0.42067957, b: 0.19788063, a: 0.019607844}
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: 0.3
+  far clip plane: 1000
+  field of view: 20
+  orthographic: 0
+  orthographic size: 5
+  m_Depth: -5
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 512
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 0}
+  m_TargetDisplay: 0
+  m_TargetEye: 3
+  m_HDR: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: 0.022
+  m_StereoMirrorMode: 0
 --- !u!1 &1130932314
 GameObject:
   m_ObjectHideFlags: 0
@@ -419,7 +505,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1631077495}
   - 212: {fileID: 1631077496}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bg3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -433,7 +519,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1631077494}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 23.95, y: -1.7, z: 99}
+  m_LocalPosition: {x: 23.95, y: -1.7, z: 10}
   m_LocalScale: {x: 1.164676, y: 1.164676, z: 1.164676}
   m_Children: []
   m_Father: {fileID: 709270155}
@@ -477,7 +563,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1675779893}
   - 212: {fileID: 1675779894}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: bg2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -491,7 +577,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1675779892}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 23.95, y: -1.7, z: 98}
+  m_LocalPosition: {x: 23.95, y: -1.7, z: 5}
   m_LocalScale: {x: 1.164676, y: 1.164676, z: 1.164676}
   m_Children: []
   m_Father: {fileID: 709270155}
@@ -575,7 +661,7 @@ Camera:
   m_GameObject: {fileID: 1897207408}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 2
+  m_ClearFlags: 4
   m_BackGroundColor: {r: 0.97794116, g: 0.94456524, b: 0.68312067, a: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
@@ -591,7 +677,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 4294966783
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -610,7 +696,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.5155697, y: 0.41999984, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1015072558}
   m_Father: {fileID: 239913946}
   m_RootOrder: 2
 --- !u!114 &1897207414
@@ -774,9 +861,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: -0.046509743}
+  m_Offset: {x: 0, y: -0.14282227}
   serializedVersion: 2
-  m_Size: {x: 2.34, y: 1.8069806}
+  m_Size: {x: 2.34, y: 1.6143556}
 --- !u!212 &2093895767
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -862,8 +949,8 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Points:
   - {x: -28.495693, y: 0.7471929}
-  - {x: -25.83252, y: 0.8540638}
-  - {x: -24.021078, y: 0.89060503}
+  - {x: -28.375076, y: -1.3706709}
+  - {x: -27.119816, y: -1.1752204}
   - {x: -26.736547, y: -1.307625}
   - {x: -25.004265, y: -1.1635859}
   - {x: -24.159193, y: -0.46243003}
@@ -877,7 +964,8 @@ EdgeCollider2D:
   - {x: -8.538593, y: -3.429422}
   - {x: -8.137923, y: -2.2848098}
   - {x: 0.8455197, y: -2.0593722}
-  - {x: 0.88752747, y: -3.0757773}
+  - {x: 0.88752747, y: -3.158471}
+  - {x: 5.7794333, y: -3.4263654}
   - {x: 10.452149, y: -3.1978726}
   - {x: 10.755081, y: -2.6656504}
   - {x: 11.41525, y: -2.1738298}
