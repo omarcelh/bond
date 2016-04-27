@@ -21,6 +21,7 @@ D:\Doc\Documents\GitHub\bond\Temp\bin\Debug\Mono.Cecil.Mdb.dll
 D:\Doc\Documents\GitHub\bond\Temp\bin\Debug\Unity.CecilTools.dll
 D:\Doc\Documents\GitHub\bond\Temp\bin\Debug\Mono.Cecil.Pdb.dll
 D:\Doc\Documents\GitHub\bond\Temp\bin\Debug\Assembly-CSharp-firstpass.pdb
+D:\Doc\Documents\GitHub\bond\Temp\bin\Debug\Assembly-CSharp.pdb
 D:\Doc\Documents\GitHub\bond\Temp\bin\Debug\UnityEngine.xml
 D:\Doc\Documents\GitHub\bond\Temp\bin\Debug\UnityEditor.xml
 D:\Doc\Documents\GitHub\bond\Temp\bin\Debug\UnityEditor.Advertisements.xml
