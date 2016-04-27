@@ -95,6 +95,7 @@ namespace UnityStandardAssets._2D
             if (col.gameObject.tag == "Terrain") {
                 m_Grounded = true;
                 Debug.Log(col.gameObject);
+                Debug.Log(m_Anim.GetFloat("Speed"));
             }
         }
     }

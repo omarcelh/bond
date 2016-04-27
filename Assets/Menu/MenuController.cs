@@ -15,7 +15,7 @@ public class MenuController : MonoBehaviour {
 	}
 
 	public void NewGame() {
-		SceneManager.LoadScene (1);
+		SceneManager.LoadScene ("Stage-1");
 	}
 
 	public void Option(){
