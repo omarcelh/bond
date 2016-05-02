@@ -18,7 +18,8 @@ namespace UnityStandardAssets._2D
         private Animator m_Anim;            // Reference to the player's animator component.
         private Rigidbody2D m_Rigidbody2D;
         private bool m_FacingRight = true;  // For determining which way the player is currently facing.
-		private int jumpCount = 0;
+
+		private int health = 3;
 
         private void Awake()
         {
@@ -33,6 +34,8 @@ namespace UnityStandardAssets._2D
 
         private void FixedUpdate()
         {
+            
+
             m_Anim.SetBool("Ground", m_Grounded);
 
             // Set the vertical animation
@@ -42,7 +45,9 @@ namespace UnityStandardAssets._2D
 
         public void Move(float move, bool jump)
         {
-
+			if (health == 0) {
+				Debug.Log ("Die");
+			}
 
             //only control the player if grounded or airControl is turned on
             if (m_Grounded || m_AirControl)
@@ -68,16 +73,12 @@ namespace UnityStandardAssets._2D
                 }
             }
             // If the player should jump...
-			if (jump && (jumpCount < 2))
+            if (m_Grounded && jump && m_Anim.GetBool("Ground"))
             {
-				m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
-				jumpCount++;
-
-				if (m_Grounded && m_Anim.GetBool ("Ground")) {
-					// Add a vertical force to the player.
-					m_Grounded = false;
-					m_Anim.SetBool ("Ground", false);
-				}
+                // Add a vertical force to the player.
+                m_Grounded = false;
+                m_Anim.SetBool("Ground", false);
+                m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
             }
         }
 
@@ -95,12 +96,15 @@ namespace UnityStandardAssets._2D
 
         private void OnCollisionEnter2D(Collision2D col)
         {
-            if (col.gameObject.tag == "Terrain") {
-                m_Grounded = true;
-                Debug.Log(col.gameObject);
-                Debug.Log(m_Anim.GetFloat("Speed"));
-				jumpCount = 0;
-            }
+			if (col.gameObject.tag == "Terrain") {
+				m_Grounded = true;
+			} else if (col.gameObject.tag == "Trap") {
+				Debug.Log (health);
+				health--;
+				Debug.Log (health);
+			} else if (col.gameObject.tag == "Collectible") {
+				health++;
+			}
         }
     }
 }

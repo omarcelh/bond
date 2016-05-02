@@ -4,7 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Hazard
+  - Terrain
+  - Trap
+  - Collectible
   layers:
   - Default
   - TransparentFX
@@ -15,8 +17,8 @@ TagManager:
   - 
   - 
   - Player
-  - 
-  - 
+  - Background
+  - Hazard
   - 
   - 
   - 
