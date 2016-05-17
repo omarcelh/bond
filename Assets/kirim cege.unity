@@ -698,6 +698,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Speed: 10
+  healthicon: {fileID: 2800000, guid: f75a92bae71a9874c969992c3506bb82, type: 3}
 --- !u!114 &1130932317
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -963,6 +964,10 @@ Prefab:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 11446148, guid: a06db6b32c3da264ab572352b0a45b47, type: 2}
+      propertyPath: healthicon
+      value: 
+      objectReference: {fileID: 2800000, guid: f75a92bae71a9874c969992c3506bb82, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a06db6b32c3da264ab572352b0a45b47, type: 2}
   m_IsPrefabParent: 0

@@ -20,6 +20,9 @@ namespace UnityStandardAssets._2D
         private bool m_FacingRight = true;  // For determining which way the player is currently facing.
 
 		private int health = 3;
+		public Texture healthicon;
+		public GameObject gameOverScreen;
+		private bool gameOver;
 
         private void Awake()
         {
@@ -31,11 +34,16 @@ namespace UnityStandardAssets._2D
             m_Grounded = false;
         }
 
+		public void Update(){
+			if (gameOver) {
+				gameOverScreen.SetActive(true);
+				gameObject.SetActive (false);
+				//gameOver = false;
+			}
+		}
 
         private void FixedUpdate()
         {
-            
-
             m_Anim.SetBool("Ground", m_Grounded);
 
             // Set the vertical animation
@@ -45,10 +53,6 @@ namespace UnityStandardAssets._2D
 
         public void Move(float move, bool jump)
         {
-			if (health == 0) {
-				Debug.Log ("Die");
-			}
-
             //only control the player if grounded or airControl is turned on
             if (m_Grounded || m_AirControl)
             {
@@ -99,12 +103,27 @@ namespace UnityStandardAssets._2D
 			if (col.gameObject.tag == "Terrain") {
 				m_Grounded = true;
 			} else if (col.gameObject.tag == "Trap") {
-				Debug.Log (health);
 				health--;
-				Debug.Log (health);
+				gameOver = (health == 0);
+				m_Grounded = true;
 			} else if (col.gameObject.tag == "Collectible") {
 				health++;
 			}
         }
+
+		private void OnGUI() {
+			float imgWidth = Screen.width / 10;
+			float imgHeight = imgWidth * 5 / 6;
+
+			float adder = imgWidth * 3 / 4;
+			float padding = imgWidth;
+
+			float imgY = Screen.height / 35;
+
+			for (int i = 0; i < health; i++) {
+				GUI.DrawTexture (new Rect(Screen.width - padding, imgY, imgWidth, imgHeight), healthicon);
+				padding += adder;
+			}
+		}
     }
 }
