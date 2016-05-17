@@ -24,10 +24,11 @@ GameObject:
   m_Component:
   - 4: {fileID: 400002}
   - 212: {fileID: 21200000}
-  - 95: {fileID: 9500000}
   - 58: {fileID: 5800000}
   - 114: {fileID: 11400000}
-  - 50: {fileID: 5030314}
+  - 114: {fileID: 11488518}
+  - 50: {fileID: 5069158}
+  - 114: {fileID: 11441228}
   m_Layer: 8
   m_Name: CharacterRobotBoy
   m_TagString: Player
@@ -69,7 +70,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100002}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.39, y: 3.16, z: 0}
+  m_LocalPosition: {x: -4.7, y: 1.4919205, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400000}
@@ -88,7 +89,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 400002}
   m_RootOrder: 1
---- !u!50 &5030314
+--- !u!50 &5069158
 Rigidbody2D:
   serializedVersion: 2
   m_ObjectHideFlags: 1
@@ -119,23 +120,6 @@ CircleCollider2D:
   m_Offset: {x: 0.1, y: 0}
   serializedVersion: 2
   m_Radius: 0.6758609
---- !u!95 &9500000
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100002}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 1
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -147,6 +131,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cf891bab1ae24b468c9e319d5a02057, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &11441228
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42fcf2ade24741e4bb667d89629ea93c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  acceleration: 0.0005
+--- !u!114 &11488518
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c6a98fb6d667034c91dc868a3a81064, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Speed: 10
+  healthicon: {fileID: 2800000, guid: f75a92bae71a9874c969992c3506bb82, type: 3}
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1

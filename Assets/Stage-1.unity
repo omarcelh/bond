@@ -768,6 +768,7 @@ GameObject:
   - 114: {fileID: 1130932316}
   - 50: {fileID: 1130932318}
   - 114: {fileID: 1130932317}
+  - 114: {fileID: 1130932319}
   m_Layer: 8
   m_Name: Spirit
   m_TagString: Player
@@ -830,6 +831,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1130932319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1130932314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42fcf2ade24741e4bb667d89629ea93c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  acceleration: 0.0008
 --- !u!58 &1130932320
 CircleCollider2D:
   m_ObjectHideFlags: 0
