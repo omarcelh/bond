@@ -101,6 +101,7 @@ namespace UnityStandardAssets._2D
 
         private void OnCollisionEnter2D(Collision2D col)
         {
+			Debug.Log (col.gameObject.tag);
 			if (col.gameObject.tag == "Terrain") {
 				m_Grounded = true;
 			} else if (col.gameObject.tag == "Trap") {
@@ -109,6 +110,7 @@ namespace UnityStandardAssets._2D
 				m_Grounded = true;
 			} else if (col.gameObject.tag == "Collectible") {
 				health++;
+				Destroy (col.gameObject);
 			}
         }
 
