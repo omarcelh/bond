@@ -22,7 +22,9 @@ namespace UnityStandardAssets._2D
 		private int health = 3;
 		public Texture healthicon;
 		public GameObject gameOverScreen;
+		public GameObject clearScreen;
 		private bool gameOver;
+		private bool stageClear;
 
         private void Awake()
         {
@@ -39,6 +41,10 @@ namespace UnityStandardAssets._2D
 				gameOverScreen.SetActive(true);
 				gameObject.SetActive (false);
 				//gameOver = false;
+			} else if (stageClear) {
+				clearScreen.SetActive(true);
+				gameObject.SetActive (false);
+				//clearScreen = false;
 			}
 		}
 
@@ -110,7 +116,9 @@ namespace UnityStandardAssets._2D
 				m_Grounded = true;
 			} else if (col.gameObject.tag == "Collectible") {
 				health++;
+				stageClear = (col.gameObject.name == "orb");
 				Destroy (col.gameObject);
+
 			}
         }
 
